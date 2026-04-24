@@ -1,0 +1,5 @@
+{
+  "denops.vim": { "branch": "main", "commit": "5cfca39988a36e42d81b925264fc846077a727e3" },
+  "fall.vim": { "branch": "main", "commit": "9464beb9bd652f8f978b51a8ce43f3d93920e154" },
+  "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" }
+}
