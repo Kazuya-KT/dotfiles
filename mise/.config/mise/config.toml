@@ -1,0 +1,10 @@
+[tools]
+node = "22.16.0"
+deno = "2.6.3"
+flutter = "3.38.10"
+terraform = "1.14.9"
+go = "1.23.2"
+python = "3.13.0"
+lua-language-server = "latest"
+"npm:intelephense" = "latest"
+terraform-ls = "latest"

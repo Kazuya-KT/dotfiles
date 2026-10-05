@@ -84,12 +84,13 @@ cd dotfiles
 stow nvim
 stow tmux
 stow wezterm
+stow mise
 ```
 
 まとめて指定してもよい。
 
 ```bash
-stow nvim tmux wezterm
+stow nvim tmux wezterm mise
 ```
 
 これにより以下のようにシンボリックリンクが作成される。
@@ -98,6 +99,16 @@ stow nvim tmux wezterm
 ~/.config/nvim    -> ~/dotfiles/nvim/.config/nvim
 ~/.config/tmux    -> ~/dotfiles/tmux/.config/tmux
 ~/.config/wezterm -> ~/dotfiles/wezterm/.config/wezterm
+~/.config/mise/config.toml -> ~/dotfiles/mise/.config/mise/config.toml
+```
+
+#### 4. mise でツールをインストール
+
+mise を入れて、`config.toml` に書かれたツールをまとめてインストールする。
+
+```bash
+curl https://mise.run | sh
+mise install
 ```
 
 ### Stow を解除する
@@ -115,6 +126,9 @@ stow -D tmux
 ├── nvim/
 │   └── .config/
 │       └── nvim/
+├── mise/
+│   └── .config/
+│       └── mise/
 ├── tmux/
 │   └── .config/
 │       └── tmux/
