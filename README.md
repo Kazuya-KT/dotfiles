@@ -85,12 +85,13 @@ stow nvim
 stow tmux
 stow wezterm
 stow mise
+stow ghostty
 ```
 
 まとめて指定してもよい。
 
 ```bash
-stow nvim tmux wezterm mise
+stow nvim tmux wezterm mise ghostty
 ```
 
 これにより以下のようにシンボリックリンクが作成される。
@@ -100,6 +101,7 @@ stow nvim tmux wezterm mise
 ~/.config/tmux    -> ~/dotfiles/tmux/.config/tmux
 ~/.config/wezterm -> ~/dotfiles/wezterm/.config/wezterm
 ~/.config/mise/config.toml -> ~/dotfiles/mise/.config/mise/config.toml
+~/.config/ghostty -> ~/dotfiles/ghostty/.config/ghostty
 ```
 
 #### 4. mise でツールをインストール
