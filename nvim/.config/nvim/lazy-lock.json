@@ -2,11 +2,11 @@
   "bullets.vim": { "branch": "master", "commit": "81570b98ca44b4100b3ddcf8d9ca74b9a9b0c884" },
   "denops.vim": { "branch": "main", "commit": "e82c5a94ca1154b05c9d74d6f6f58c9991b1424f" },
   "fall.vim": { "branch": "main", "commit": "9464beb9bd652f8f978b51a8ce43f3d93920e154" },
-  "jb.nvim": { "branch": "main", "commit": "b1efc8a2692265e06385c97e10e8538dca52ccef" },
+  "jb.nvim": { "branch": "main", "commit": "d3f93e573f66d17213c841cd08a23ca63a6ed329" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "mini.icons": { "branch": "main", "commit": "f642e3ba8c12afbc8f32f6d77ef6597eac56786f" },
   "render-markdown.nvim": { "branch": "main", "commit": "640a3ec6d538bad17c328be373c7cad0293d9589" },
-  "vim-fern": { "branch": "main", "commit": "fd039979718b608a7c5912f163a07b230da1b5f4" },
+  "vim-fern": { "branch": "main", "commit": "eaf8395c355bbc1e09d273b59affc92ede28dadd" },
   "vim-fern-hijack": { "branch": "master", "commit": "f65524899231b15528066744e714fb344abf0892" }
 }
