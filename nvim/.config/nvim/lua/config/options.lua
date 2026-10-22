@@ -13,6 +13,8 @@ vim.keymap.set({ "n", "x" }, "k", "gk", { silent = true })
 -- ノーマルモードで ESC を押したら画面を一瞬光らせる (vim の visualbell と同じ。nvim は初期設定で全部オフ)
 vim.opt.belloff = ""
 vim.opt.visualbell = true
+-- 長い行も色付けする (初期値 3000 バイトだと日本語の JSON は約 1000 字で色が消える)
+vim.opt.synmaxcol = 20000
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 
