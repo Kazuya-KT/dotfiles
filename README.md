@@ -86,12 +86,13 @@ stow tmux
 stow wezterm
 stow mise
 stow ghostty
+stow karabiner
 ```
 
 まとめて指定してもよい。
 
 ```bash
-stow nvim tmux wezterm mise ghostty
+stow nvim tmux wezterm mise ghostty karabiner
 ```
 
 これにより以下のようにシンボリックリンクが作成される。
@@ -102,7 +103,12 @@ stow nvim tmux wezterm mise ghostty
 ~/.config/wezterm -> ~/dotfiles/wezterm/.config/wezterm
 ~/.config/mise/config.toml -> ~/dotfiles/mise/.config/mise/config.toml
 ~/.config/ghostty -> ~/dotfiles/ghostty/.config/ghostty
+~/.config/karabiner -> ~/dotfiles/karabiner/.config/karabiner
 ```
+
+Karabiner-Elements は設定を保存するときに `karabiner.json` を書き換えるため、ファイル単体ではなく `~/.config/karabiner` ディレクトリごとリンクする必要がある。
+`~/.config/karabiner` がまだ無い状態（Karabiner を初めて起動する前）で `stow karabiner` すればディレクトリごとのリンクになる。
+すでにある場合は `~/.config/karabiner` を退避してから `stow karabiner` する。
 
 #### 4. mise でツールをインストール
 
