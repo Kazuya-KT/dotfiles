@@ -10,31 +10,6 @@ return {
     end,
   },
   {
-    "MeanderingProgrammer/render-markdown.nvim",
-    ft = "markdown",
-    -- markdown / markdown_inline パーサは Neovim 同梱のものを使うので
-    -- nvim-treesitter は不要。アイコンプロバイダのみ入れる
-    dependencies = {
-      { "nvim-mini/mini.icons", opts = {} },
-    },
-    init = function()
-      -- render-markdown は treesitter ハイライトが有効なバッファで動く。
-      -- nvim-treesitter を入れていないので自前で start する
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "markdown",
-        callback = function()
-          pcall(vim.treesitter.start)
-        end,
-      })
-    end,
-    opts = {
-      -- 同梱されていないパーサ（html / latex / yaml）は使わない
-      html = { enabled = false },
-      latex = { enabled = false },
-      yaml = { enabled = false },
-    },
-  },
-  {
     "iamcco/markdown-preview.nvim",
     ft = "markdown",
     cmd = { "MarkdownPreview", "MarkdownPreviewToggle", "MarkdownPreviewStop" },

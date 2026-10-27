@@ -22,6 +22,14 @@ return {
                 vim.keymap.set("c", "<C-q>", "<Cmd>call fall#action('open:quiccfix')<CR>", {nowait = true})
             end,
         })
+        -- jb では CursorLine が背景とほぼ同じ色で、リストのカーソル行が見えない。
+        -- リストのウィンドウだけ選択色（Visual）にする
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = "fall-list",
+            callback = function()
+                vim.opt_local.winhighlight:append({ CursorLine = "Visual" })
+            end,
+        })
     end,
   },
 }

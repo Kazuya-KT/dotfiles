@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- 定義ジャンプ（戻るのは <C-o>）
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    -- 型定義・宣言へジャンプ
+    -- 型定義へジャンプ
     vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, opts)
     -- 定義を分割ウィンドウで開く
     vim.keymap.set('n', '<leader>gd', function()

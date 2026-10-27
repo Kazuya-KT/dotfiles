@@ -15,3 +15,21 @@ vim.opt.belloff = ""
 vim.opt.visualbell = true
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
+
+-- モードごとにカーソルの形と色を変える
+-- ノーマル：青ブロック / 挿入：緑の縦棒 / ビジュアル：ピンクのブロック
+vim.opt.guicursor = table.concat({
+  "n-c-sm:block-NormalCursor",
+  "v-ve:block-VisualCursor",
+  "i-ci:ver25-InsertCursor",
+  "r-cr-o:hor20-InsertCursor",
+}, ",")
+
+-- colorscheme を読み込むとハイライトが消えるので、読み込むたびに入れ直す
+local function cursor_colors()
+  vim.api.nvim_set_hl(0, "NormalCursor", { bg = "#4A88C7", fg = "#FFFFFF" })
+  vim.api.nvim_set_hl(0, "InsertCursor", { bg = "#6AAB73", fg = "#FFFFFF" })
+  vim.api.nvim_set_hl(0, "VisualCursor", { bg = "#C77DBB", fg = "#FFFFFF" })
+end
+vim.api.nvim_create_autocmd("ColorScheme", { callback = cursor_colors })
+cursor_colors()

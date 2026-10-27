@@ -3,6 +3,9 @@ return {
       "lambdalisue/vim-fern",
       dependencies = {
         "lambdalisue/vim-fern-hijack",
+        "lambdalisue/vim-fern-renderer-nerdfont",
+        "lambdalisue/vim-nerdfont",
+        "lambdalisue/vim-glyph-palette",
       },
       keys = {
         { "<leader>fe", "<Cmd>Fern . -drawer -toggle -reveal=%<CR>", desc = "Fern drawer" },
@@ -10,10 +13,9 @@ return {
       init = function()
         vim.g["fern#default_hidden"] = 1
         vim.g["fern#drawer_width"] = 40
-        vim.g["fern#renderer#default#leading"] = "│ "
-        vim.g["fern#renderer#default#collapsed_symbol"] = "▶ "
-        vim.g["fern#renderer#default#expanded_symbol"] = "▼ "
-        vim.g["fern#renderer#default#leaf_symbol"] = "  "
+        -- ファイル種別のアイコンを出す。インデントの縦線は nerdfont 側の設定で出す
+        vim.g["fern#renderer"] = "nerdfont"
+        vim.g["fern#renderer#nerdfont#indent_markers"] = 1
       end,
       config = function()
         vim.api.nvim_create_autocmd("FileType", {
@@ -23,6 +25,8 @@ return {
             vim.keymap.set("n", "<CR>", "<Plug>(fern-action-open-or-expand)", opts)
             vim.keymap.set("n", "l", "<Plug>(fern-action-expand)", opts)
             vim.keymap.set("n", "h", "<Plug>(fern-action-collapse)", opts)
+            -- アイコンにファイル種別ごとの色を付ける
+            vim.fn["glyph_palette#apply"]()
           end,
         })
       end,

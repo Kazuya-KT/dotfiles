@@ -1,0 +1,39 @@
+" nvim の設定を IdeaVim 向けに移植したもの
+" 元: nvim/.config/nvim/lua/config/*.lua, lua/plugins/*.lua
+
+let mapleader = " "
+
+" 基本設定（options.lua）
+set number
+set cursorline
+set incsearch
+set hlsearch
+" J で IDE の賢い行結合を使う
+set ideajoin
+
+" keymaps.lua
+inoremap jj <Esc>
+
+" LSP（lsp.lua）
+" grn / gra / grr / gri / K は Neovim 0.11 の組み込みマッピング相当
+nmap gd <Action>(GotoDeclaration)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap <leader>gd :vsplit<CR><Action>(GotoDeclaration)
+nmap grn <Action>(RenameElement)
+nmap gra <Action>(ShowIntentionActions)
+nmap grr <Action>(FindUsages)
+nmap gri <Action>(GotoImplementation)
+nmap K <Action>(QuickJavaDoc)
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
+nmap <leader>e <Action>(ShowErrorDescription)
+
+" fall.vim
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fg <Action>(FindInPath)
+nmap <leader>fb <Action>(Switcher)
+nmap <leader>fl <Action>(FileStructurePopup)
+nmap <leader>fo <Action>(RecentFiles)
+
+" fern
+nmap <leader>fe <Action>(SelectInProjectView)
